@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>五险一金计算器</title>
+    <link rel="stylesheet" href="bootstrap基础/css/bootstrap.css">
+    <link rel="stylesheet" href="css/361-五险一金及税后工资计算器.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/361-北京.js"></script>
+    <script src="js/361-城市选择.js"></script>
+    </head>
+<body>
+<div id="div1">
+    <div id="center">
+        <div id="center_left">
+            <div id="center_left_top">
+                <span class="city_choose"> <p class="city_chosed"> <span class="didian guding"></span> </p> <span class="glyphicon glyphicon-list "> </span><a href=""> 选择城市</a> </span>
+                <p class="hot_citys">当前热门城市 <span class="glyphicon glyphicon-fire"></span> </p>
+                <a class="hot_city" href="javascript:void(0)" >北京</a>
+                <a class="hot_city" href="javascript:void(0)" >上海</a>
+                <a class="hot_city" href="javascript:void(0)" >广州</a>
+                <a class="hot_city" href="javascript:void(0)" >深圳</a>
+                <a class="hot_city" href="javascript:void(0)" >杭州</a>
+                <a class="hot_city" href="javascript:void(0)" >南京</a>
+                <a class="hot_city" href="javascript:void(0)" >西安</a>
+                <a class="hot_city" href="javascript:void(0)" >长沙</a>
+                <a class="hot_city" href="javascript:void(0)" >天津</a>
+                <a class="hot_city" href="javascript:void(0)" >郑州</a>
+                <a class="hot_city" href="javascript:void(0)" >昆明</a>
+                <a class="hot_city" href="javascript:void(0)" >武汉</a>
+                <a class="hot_city" href="javascript:void(0)" >重庆</a>
+                <a class="hot_city" href="javascript:void(0)" >成都</a>
+                <a class="hot_city" href="javascript:void(0)" >佛山</a>
+                <a class="hot_city" href="javascript:void(0)" >合肥</a>
+                <a class="hot_city" href="javascript:void(0)" >宁波</a>
+                <a class="hot_city" href="javascript:void(0)" >济南</a>
+            </div>
+            <div id="center_left_center">
+                <p class="hot_citys">城市定位 <span class="glyphicon glyphicon-record"></span> </p>
+                <div class="col-lg-12">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="请输入城市..." id="setcity">
+                        <span class="input-group-btn">
+        <button class="btn btn-default" type="button" id="setcity_btn"> <span class="glyphicon glyphicon-search"></span> </button>
+      </span>
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div>
+            <div id="center_left_bottom">
+                <div id="pingjungongzi">
+                    <p class="hot_citys"><span class="didian"></span>全部人口去年的平均工资<span class="glyphicon glyphicon-bullhorn"></span></p>
+                    <div class="col-lg-12">
+                        <div class="input-group">
+                         <span class="input-group-btn">
+                           <button class="btn btn-default"  type="button"  >
+                               <span class="glyphicon glyphicon-jpy"></span>
+                           </button>
+                         </span>
+                            <input type="text" class="form-control didian_pingjungongzi" disabled="disabled" >
+                            <span class="input-group-btn">
+                              <button class="btn btn-default" type="button" disabled="disabled"> .00 </button>
+                            </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div>
+                <div id="shebao">
+                    <p><span class="didian"></span>社保汇缴基数:</p>
+                    <div class="btn-group " role="group" aria-label="...">
+                        <button type="button" class="btn btn-default btn1" disabled="disabled"></button>
+                        <button type="button" class="btn btn-default btn0" disabled="disabled">—</button>
+                        <button type="button" class="btn btn-default btn2" disabled="disabled"></button>
+                    </div>
+
+                    <!--<button type="button" class="btn btn-default btn-sm btn1" disabled="disabled"></button>-->
+                    <!--<button type="button" class="btn btn-default btn-sm btn0" disabled="disabled">—</button>-->
+                    <!--<button type="button" class="btn btn-default btn-sm btn2" disabled="disabled"></button>-->
+
+                </div>
+            </div>
+        </div>
+        <div id="center_right">
+            <div id="center_right_top">
+                <p><span class="didian"></span>五险一金及税后工资计算器</p>
+            </div>
+            <div id="center_right_center">
+                <div id="shuiqian">
+                    <p>税前：</p>
+                    <div class="col-lg-9">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+        <button class="btn " type="button">￥ </button>
+      </span>
+                            <input type="text" id="shuiqian_gongzi" class="form-control " placeholder="0">
+                            <span class="input-group-btn">
+        <button class="btn btn-success" id="jisuan" type="button">计算 </button>
+      </span>
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div>
+                <div id="shuihou">
+                    <p>税后：</p>
+                    <div class="col-lg-8">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+        <button class="btn " type="button">￥ </button>
+      </span>
+                            <input type="text" class="form-control" disabled="disabled"  placeholder="0">
+
+                        </div><!-- /input-group -->
+                    </div><!-- /.col-lg-6 -->
+                </div>
+            </div>
+            <div id="center_right_bottom">
+                <p>2018年<span class="didian"></span>五险一金及纳税详情</p>
+                <table class="table table-bordered xiangqing" >
+                    <tr>
+                        <td>养老保险金</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>医疗保险金</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>失业保险金</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>住房基金</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>五险一金共计</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>扣除五险一金后月薪</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>税率</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>速算扣除数</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>个人缴税</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>税后月薪</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+                <p class="zhushi" style="text-indent: 2em">注：本数据来自于社保查询网</p>
+                <p class="zhushi" style="text-indent: 4em">税后工资=税前工资-五险一金共计-（（（扣除五险一金后月薪-3500）*税率）-速算扣除数）</p>
+                <p class="zhushi" style="text-indent: 4em">个人纳税=（扣除五险一金后月薪-3500）*税率-速算扣除数</p>
+            </div>
+        </div>
+    </div>
+    <div id="bottom">
+         <p><span class="glyphicon glyphicon-paperclip">制作人：靳娅娟  邮箱：2633579745@qq.com</span></p>
+         <p><span>欢迎提出修改建议</span></p>
+    </div>
+</div>
+</body>
+</html>
